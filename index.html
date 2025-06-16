@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="color-scheme" content="light">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="msapplication-navbutton-color" content="#ffffff">
-    <meta name="apple-mobile-web-app-status-bar-style" content="light-content">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="color-scheme" content="light only">
+    <meta name="theme-color" content="#1e40af">
     <title>Apex Wiring Solutions - Comprehensive Marketing Strategy</title>
     
     <!-- Favicon -->
@@ -17,6 +15,7 @@
     <style>
         /* ===== DESIGN SYSTEM ===== */
         :root {
+            color-scheme: light only;
             /* Brand Colors */
             --apex-primary: #1e40af;
             --apex-secondary: #0ea5e9;
@@ -82,22 +81,38 @@
         }
 
         /* ===== RESET & BASE STYLES ===== */
-        
-        /* Force light mode - prevent browser dark mode */
-        :root {
-            color-scheme: light only;
-            supported-color-schemes: light;
-        }
-        
-        html {
-            color-scheme: light only;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            color-scheme: light only;
+        }
+
+        /* ===== FORCE LIGHT MODE ===== */
+        html {
+            color-scheme: light only !important;
+            background-color: #f8fafc !important;
+        }
+
+        body {
+            background-color: #f8fafc !important;
+            color: #1e293b !important;
+        }
+
+        /* Override any automatic dark mode detection */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: light only !important;
+            }
+            
+            html, body {
+                background-color: #f8fafc !important;
+                color: #1e293b !important;
+            }
+            
+            * {
+                background-color: inherit !important;
+                color: inherit !important;
+            }
         }
 
         /* ===== BRANDED SCROLLBAR ===== */
@@ -202,15 +217,11 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--slate-800) !important;
-            background: linear-gradient(135deg, var(--slate-50) 0%, var(--slate-100) 100%) !important;
+            color: var(--slate-800);
+            background: linear-gradient(135deg, var(--slate-50) 0%, var(--slate-100) 100%);
             overflow: hidden;
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-            color-scheme: light only;
         }
 
         body.loaded {
@@ -246,8 +257,7 @@
             opacity: 0;
             transform: translateX(100%);
             transition: all var(--transition-slow);
-            background: white !important;
-            color-scheme: light only;
+            background: white;
         }
 
         .slide.active {
@@ -764,156 +774,7 @@
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
-        
-        /* Mobile First - Small phones */
-        @media (max-width: 480px) {
-            :root {
-                --text-xs: 0.7rem;
-                --text-sm: 0.8rem;
-                --text-base: 0.9rem;
-                --text-lg: 1rem;
-                --text-xl: 1.1rem;
-                --text-2xl: 1.3rem;
-                --text-3xl: 1.6rem;
-                --text-4xl: 1.9rem;
-                --text-5xl: 2.2rem;
-            }
-            
-            .presentation-container {
-                height: 100vh;
-                overflow-x: hidden;
-            }
-            
-            .slide {
-                overflow-x: hidden;
-                min-height: 100vh;
-            }
-            
-            .slide-content {
-                padding: var(--space-4) var(--space-3);
-                overflow-x: hidden;
-                overflow-y: auto;
-                height: calc(100vh - 80px);
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            .slide-title {
-                font-size: var(--text-3xl);
-                margin-bottom: var(--space-6);
-                line-height: 1.1;
-                word-break: break-word;
-                hyphens: auto;
-            }
-            
-            .slide-subtitle {
-                font-size: var(--text-lg);
-                margin-bottom: var(--space-6);
-                line-height: 1.3;
-            }
-            
-            .slide-header {
-                padding: var(--space-3) var(--space-4);
-                min-height: 70px;
-                flex-wrap: wrap;
-                gap: var(--space-2);
-            }
-            
-            .logo {
-                height: 35px;
-                max-width: 150px;
-            }
-            
-            .slide-number {
-                font-size: var(--text-xs);
-                padding: var(--space-1) var(--space-3);
-            }
-            
-            .metric-showcase, .feature-grid, .comparison-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-3);
-                margin: var(--space-6) 0;
-            }
-            
-            .metric-card, .feature-card, .comparison-card {
-                padding: var(--space-4);
-                margin-bottom: var(--space-3);
-            }
-            
-            .metric-number {
-                font-size: var(--text-3xl);
-            }
-            
-            .metric-label {
-                font-size: var(--text-sm);
-            }
-            
-            .metric-description {
-                font-size: var(--text-xs);
-                line-height: 1.4;
-            }
-            
-            .feature-title {
-                font-size: var(--text-lg);
-                margin-bottom: var(--space-2);
-            }
-            
-            .feature-description {
-                font-size: var(--text-sm);
-                line-height: 1.4;
-                margin-bottom: var(--space-3);
-            }
-            
-            .feature-list li {
-                font-size: var(--text-xs);
-                padding: var(--space-1) 0;
-            }
-            
-            .callout-box {
-                padding: var(--space-4);
-                margin: var(--space-4) 0;
-            }
-            
-            .callout-title {
-                font-size: var(--text-lg);
-                margin-bottom: var(--space-2);
-            }
-            
-            .callout-text {
-                font-size: var(--text-sm);
-                line-height: 1.4;
-            }
-            
-            .mobile-nav {
-                bottom: var(--space-4);
-                padding: var(--space-2) var(--space-4);
-                gap: var(--space-3);
-            }
-            
-            .nav-btn {
-                padding: var(--space-2);
-                min-width: 40px;
-                height: 40px;
-                font-size: var(--text-sm);
-            }
-            
-            /* Remove hover effects on mobile */
-            .metric-card:hover::after, 
-            .feature-card:hover::after, 
-            .comparison-card:hover::after,
-            .nav-btn:hover::after {
-                display: none;
-            }
-            
-            /* Improve touch targets */
-            button, .nav-btn, a {
-                min-height: 44px;
-                min-width: 44px;
-                touch-action: manipulation;
-            }
-        }
-        
-        /* Tablets and larger phones */
-        @media (max-width: 768px) and (min-width: 481px) {
+        @media (max-width: 768px) {
             .navigation {
                 display: none;
             }
@@ -923,150 +784,30 @@
             }
             
             .slide-content {
-                padding: var(--space-6) var(--space-5);
-                height: calc(100vh - 90px);
-                overflow-y: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            .slide-title {
-                font-size: var(--text-4xl);
-                margin-bottom: var(--space-8);
-            }
-            
-            .slide-subtitle {
-                font-size: var(--text-xl);
-                margin-bottom: var(--space-6);
+                padding: var(--space-6);
             }
             
             .metric-showcase {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: var(--space-5);
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
             }
             
             .feature-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: var(--space-5);
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
             }
             
             .comparison-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-5);
+                gap: var(--space-4);
             }
             
             .slide-header {
                 padding: var(--space-4) var(--space-6);
-                min-height: 80px;
             }
             
             .logo {
                 height: 40px;
-            }
-        }
-        
-                 /* Desktop and larger screens - preserve existing layout */
-        @media (min-width: 769px) {
-            .navigation {
-                display: flex;
-            }
-            
-            .mobile-nav {
-                display: none;
-            }
-        }
-        
-                 /* Universal mobile optimizations */
-        @media (max-width: 768px) {
-            /* Force light mode on mobile - prevent browser dark mode */
-            html, body {
-                color-scheme: light only !important;
-                background: linear-gradient(135deg, var(--slate-50) 0%, var(--slate-100) 100%) !important;
-                color: var(--slate-800) !important;
-            }
-            
-            /* Prevent horizontal scroll */
-            html, body {
-                overflow-x: hidden;
-                width: 100%;
-                position: relative;
-            }
-            
-            /* Optimize text selection on mobile */
-            * {
-                -webkit-tap-highlight-color: rgba(30, 64, 175, 0.2);
-                -webkit-touch-callout: none;
-                -webkit-user-select: none;
-                -khtml-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
-            
-            /* Allow text selection for content */
-            .slide-content, .slide-content *, 
-            .feature-description, .metric-description,
-            .callout-text, p, li {
-                -webkit-user-select: text;
-                -moz-user-select: text;
-                -ms-user-select: text;
-                user-select: text;
-            }
-            
-            /* Improve scrolling performance */
-            .slide-content {
-                -webkit-overflow-scrolling: touch;
-                scroll-behavior: smooth;
-                will-change: scroll-position;
-            }
-            
-            /* Prevent zoom on input focus */
-            input, select, textarea {
-                font-size: 16px !important;
-            }
-            
-            /* Better mobile typography */
-            h1, h2, h3, h4, h5, h6 {
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                hyphens: auto;
-            }
-            
-            /* Optimize images for mobile */
-            img {
-                max-width: 100%;
-                height: auto;
-                display: block;
-            }
-            
-            /* Mobile navigation improvements */
-            .navigation {
-                display: none !important;
-            }
-            
-            .mobile-nav {
-                display: flex !important;
-                -webkit-backdrop-filter: blur(10px);
-                backdrop-filter: blur(10px);
-                background: rgba(255, 255, 255, 0.95) !important;
-                color: var(--slate-800) !important;
-                color-scheme: light only;
-            }
-            
-            /* Force light backgrounds on all cards and content areas */
-            .slide, .slide-header, .slide-content, 
-            .metric-card, .feature-card, .comparison-card,
-            .callout-box {
-                background: white !important;
-                color: var(--slate-800) !important;
-                color-scheme: light only;
-            }
-            
-            /* Ensure text elements keep proper colors */
-            .slide-title, .slide-subtitle, .metric-label, 
-            .feature-title, .feature-description,
-            .callout-title, .callout-text, p, li, h1, h2, h3, h4, h5, h6 {
-                color: inherit !important;
-                color-scheme: light only;
             }
         }
 

@@ -15,6 +15,14 @@
     <meta name="color-scheme" content="light only">
     <meta name="supported-color-schemes" content="light">
     <meta name="theme-color" content="#f8fafc">
+    
+    <!-- Additional WebKit Dark Mode Prevention -->
+    <style>
+        /* Prevent WebKit from applying any automatic dark mode */
+        html { -webkit-color-scheme: light only !important; }
+        body { -webkit-color-scheme: light only !important; }
+        * { -webkit-color-scheme: light only !important; }
+    </style>
     <style>
         /* ===== DESIGN SYSTEM ===== */
         :root {
@@ -89,26 +97,74 @@
             box-sizing: border-box;
         }
 
-        /* ===== FORCE LIGHT MODE - OVERRIDE SYSTEM DARK MODE ===== */
+        /* ===== FORCE LIGHT MODE - AGGRESSIVE OVERRIDE ===== */
         html {
             color-scheme: light only !important;
-            background: var(--slate-50) !important;
+            background: #f8fafc !important;
+            filter: none !important;
         }
 
-        /* Override any potential dark mode styles */
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+            color: #1e293b !important;
+            filter: none !important;
+        }
+
+        /* Aggressive override for ALL elements */
+        *, *::before, *::after {
+            color-scheme: light only !important;
+            filter: none !important;
+        }
+
+        /* Override dark mode at media query level */
         @media (prefers-color-scheme: dark) {
-            :root {
+            html {
                 color-scheme: light only !important;
+                background: #f8fafc !important;
+                filter: none !important;
             }
             
-            html, body {
-                background: linear-gradient(135deg, var(--slate-50) 0%, var(--slate-100) 100%) !important;
-                color: var(--slate-800) !important;
+            body {
+                background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+                color: #1e293b !important;
+                filter: none !important;
             }
             
-            * {
+            *, *::before, *::after {
                 background-color: inherit !important;
                 color: inherit !important;
+                border-color: inherit !important;
+                filter: none !important;
+                color-scheme: light only !important;
+            }
+
+            /* Force specific element colors */
+            h1, h2, h3, h4, h5, h6 {
+                color: #1e293b !important;
+            }
+
+            p, span, div, section, article {
+                color: #1e293b !important;
+                background-color: transparent !important;
+            }
+
+            /* Override any webkit appearance changes */
+            input, textarea, select, button {
+                -webkit-appearance: none !important;
+                appearance: none !important;
+                color-scheme: light only !important;
+            }
+        }
+
+        /* Additional webkit dark mode overrides */
+        @media (prefers-color-scheme: dark) {
+            ::-webkit-scrollbar {
+                background: #f1f5f9 !important;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #1e40af 0%, #0ea5e9 100%) !important;
+                border: 2px solid #f1f5f9 !important;
             }
         }
 
@@ -2078,9 +2134,46 @@
             e.preventDefault();
         });
 
+        // ===== AGGRESSIVE LIGHT MODE ENFORCEMENT =====
+        function forceLightMode() {
+            // Force light mode on document and html
+            document.documentElement.style.setProperty('color-scheme', 'light only', 'important');
+            document.documentElement.style.setProperty('background', '#f8fafc', 'important');
+            document.documentElement.style.setProperty('filter', 'none', 'important');
+            
+            document.body.style.setProperty('background', 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)', 'important');
+            document.body.style.setProperty('color', '#1e293b', 'important');
+            document.body.style.setProperty('filter', 'none', 'important');
+            
+            // Override any dark mode styles that might have been applied
+            const allElements = document.querySelectorAll('*');
+            allElements.forEach(element => {
+                const computedStyle = window.getComputedStyle(element);
+                if (computedStyle.filter && computedStyle.filter !== 'none') {
+                    element.style.setProperty('filter', 'none', 'important');
+                }
+                element.style.setProperty('color-scheme', 'light only', 'important');
+            });
+            
+            // Force meta tag values
+            let colorSchemeMetaTag = document.querySelector('meta[name="color-scheme"]');
+            if (colorSchemeMetaTag) {
+                colorSchemeMetaTag.setAttribute('content', 'light only');
+            }
+        }
+
+        // Run on DOM ready
+        document.addEventListener('DOMContentLoaded', forceLightMode);
+        
+        // Run repeatedly to override any dynamic changes
+        setInterval(forceLightMode, 100);
+
         // Enhanced loading animation
         window.addEventListener('load', function() {
             document.body.classList.add('loaded');
+            
+            // Force light mode again after load
+            forceLightMode();
             
             // Animate in the first slide elements
             setTimeout(() => {

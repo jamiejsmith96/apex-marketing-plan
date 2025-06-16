@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="color-scheme" content="light">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <title>Apex Wiring Solutions - Comprehensive Marketing Strategy</title>
     
     <!-- Favicon -->
@@ -193,7 +191,9 @@
             overflow: hidden;
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
-            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         body.loaded {
@@ -746,105 +746,283 @@
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            body {
-                overflow-x: hidden;
-                overflow-y: auto;
-                background: white;
+        
+        /* Mobile First - Small phones */
+        @media (max-width: 480px) {
+            :root {
+                --text-xs: 0.7rem;
+                --text-sm: 0.8rem;
+                --text-base: 0.9rem;
+                --text-lg: 1rem;
+                --text-xl: 1.1rem;
+                --text-2xl: 1.3rem;
+                --text-3xl: 1.6rem;
+                --text-4xl: 1.9rem;
+                --text-5xl: 2.2rem;
             }
             
             .presentation-container {
-                height: auto;
-                min-height: 100vh;
+                height: 100vh;
+                overflow-x: hidden;
             }
             
             .slide {
-                position: static;
-                transform: none !important;
-                opacity: 1 !important;
-                height: auto;
+                overflow-x: hidden;
                 min-height: 100vh;
-                background: white;
             }
             
-            .slide:not(.active) {
+            .slide-content {
+                padding: var(--space-4) var(--space-3);
+                overflow-x: hidden;
+                overflow-y: auto;
+                height: calc(100vh - 80px);
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .slide-title {
+                font-size: var(--text-3xl);
+                margin-bottom: var(--space-6);
+                line-height: 1.1;
+                word-break: break-word;
+                hyphens: auto;
+            }
+            
+            .slide-subtitle {
+                font-size: var(--text-lg);
+                margin-bottom: var(--space-6);
+                line-height: 1.3;
+            }
+            
+            .slide-header {
+                padding: var(--space-3) var(--space-4);
+                min-height: 70px;
+                flex-wrap: wrap;
+                gap: var(--space-2);
+            }
+            
+            .logo {
+                height: 35px;
+                max-width: 150px;
+            }
+            
+            .slide-number {
+                font-size: var(--text-xs);
+                padding: var(--space-1) var(--space-3);
+            }
+            
+            .metric-showcase, .feature-grid, .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-3);
+                margin: var(--space-6) 0;
+            }
+            
+            .metric-card, .feature-card, .comparison-card {
+                padding: var(--space-4);
+                margin-bottom: var(--space-3);
+            }
+            
+            .metric-number {
+                font-size: var(--text-3xl);
+            }
+            
+            .metric-label {
+                font-size: var(--text-sm);
+            }
+            
+            .metric-description {
+                font-size: var(--text-xs);
+                line-height: 1.4;
+            }
+            
+            .feature-title {
+                font-size: var(--text-lg);
+                margin-bottom: var(--space-2);
+            }
+            
+            .feature-description {
+                font-size: var(--text-sm);
+                line-height: 1.4;
+                margin-bottom: var(--space-3);
+            }
+            
+            .feature-list li {
+                font-size: var(--text-xs);
+                padding: var(--space-1) 0;
+            }
+            
+            .callout-box {
+                padding: var(--space-4);
+                margin: var(--space-4) 0;
+            }
+            
+            .callout-title {
+                font-size: var(--text-lg);
+                margin-bottom: var(--space-2);
+            }
+            
+            .callout-text {
+                font-size: var(--text-sm);
+                line-height: 1.4;
+            }
+            
+            .mobile-nav {
+                bottom: var(--space-4);
+                padding: var(--space-2) var(--space-4);
+                gap: var(--space-3);
+            }
+            
+            .nav-btn {
+                padding: var(--space-2);
+                min-width: 40px;
+                height: 40px;
+                font-size: var(--text-sm);
+            }
+            
+            /* Remove hover effects on mobile */
+            .metric-card:hover::after, 
+            .feature-card:hover::after, 
+            .comparison-card:hover::after,
+            .nav-btn:hover::after {
                 display: none;
             }
             
-            .slide.active {
-                display: flex;
+            /* Improve touch targets */
+            button, .nav-btn, a {
+                min-height: 44px;
+                min-width: 44px;
+                touch-action: manipulation;
             }
-            
+        }
+        
+        /* Tablets and larger phones */
+        @media (max-width: 768px) and (min-width: 481px) {
             .navigation {
                 display: none;
             }
             
             .mobile-nav {
                 display: flex;
-                position: fixed;
-                bottom: 20px;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             }
             
             .slide-content {
-                padding: var(--space-4);
-                overflow-y: visible;
-                background: white;
-                flex: 1;
+                padding: var(--space-6) var(--space-5);
+                height: calc(100vh - 90px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
             
-            .slide-content::before {
-                display: none;
+            .slide-title {
+                font-size: var(--text-4xl);
+                margin-bottom: var(--space-8);
+            }
+            
+            .slide-subtitle {
+                font-size: var(--text-xl);
+                margin-bottom: var(--space-6);
             }
             
             .metric-showcase {
-                grid-template-columns: 1fr;
-                gap: var(--space-4);
-                margin: var(--space-6) 0;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: var(--space-5);
             }
             
             .feature-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-4);
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: var(--space-5);
             }
             
             .comparison-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-4);
+                gap: var(--space-5);
             }
             
             .slide-header {
                 padding: var(--space-4) var(--space-6);
-                background: white;
-                border-bottom: 2px solid var(--slate-200);
+                min-height: 80px;
             }
             
             .logo {
-                height: 35px;
+                height: 40px;
+            }
+        }
+        
+                 /* Desktop and larger screens - preserve existing layout */
+        @media (min-width: 769px) {
+            .navigation {
+                display: flex;
             }
             
-            .slide-title {
-                font-size: var(--text-3xl);
-                margin-bottom: var(--space-6);
+            .mobile-nav {
+                display: none;
+            }
+        }
+        
+        /* Universal mobile optimizations */
+        @media (max-width: 768px) {
+            /* Prevent horizontal scroll */
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                position: relative;
             }
             
-            .slide-subtitle {
-                font-size: var(--text-lg);
-                margin-bottom: var(--space-6);
+            /* Optimize text selection on mobile */
+            * {
+                -webkit-tap-highlight-color: rgba(30, 64, 175, 0.2);
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
             }
             
-            .metric-card {
-                padding: var(--space-4);
-                background: white;
-                border: 2px solid var(--slate-100);
+            /* Allow text selection for content */
+            .slide-content, .slide-content *, 
+            .feature-description, .metric-description,
+            .callout-text, p, li {
+                -webkit-user-select: text;
+                -moz-user-select: text;
+                -ms-user-select: text;
+                user-select: text;
             }
             
-            .feature-card {
-                padding: var(--space-4);
-                background: white;
-                border: 2px solid var(--slate-100);
+            /* Improve scrolling performance */
+            .slide-content {
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+                will-change: scroll-position;
+            }
+            
+            /* Prevent zoom on input focus */
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+            
+            /* Better mobile typography */
+            h1, h2, h3, h4, h5, h6 {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+            
+            /* Optimize images for mobile */
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+            
+            /* Mobile navigation improvements */
+            .navigation {
+                display: none !important;
+            }
+            
+            .mobile-nav {
+                display: flex !important;
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                background: rgba(255, 255, 255, 0.95);
             }
         }
 

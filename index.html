@@ -888,20 +888,26 @@
                 min-width: 44px;
             }
             
-            /* Better text contrast on mobile */
-            .callout-box {
-                padding: var(--space-4);
-                margin: var(--space-4) 0;
-            }
-            
-            .callout-title {
-                font-size: var(--text-lg);
-            }
-            
-            .callout-text {
-                font-size: var(--text-sm);
-                line-height: 1.5;
-            }
+                         /* Better text contrast on mobile */
+             .callout-box {
+                 padding: var(--space-4);
+                 margin: var(--space-4) 0;
+             }
+             
+             .callout-box::after {
+                 font-size: clamp(1.5rem, 6vw, 2rem);
+                 top: var(--space-2);
+             }
+             
+             .callout-title {
+                 font-size: var(--text-lg);
+                 margin-top: var(--space-6);
+             }
+             
+             .callout-text {
+                 font-size: var(--text-sm);
+                 line-height: 1.5;
+             }
             
             /* Optimize lists for mobile */
             ul, ol {
@@ -953,14 +959,29 @@
                  line-height: 1;
              }
             
-            .slide-header {
-                padding: var(--space-2) var(--space-3);
-                min-height: 50px;
-            }
-            
-            .logo {
-                height: 28px;
-            }
+                         .slide-header {
+                 padding: var(--space-2) var(--space-3);
+                 min-height: 50px;
+             }
+             
+             .logo {
+                 height: 28px;
+             }
+             
+             .callout-box {
+                 padding: var(--space-3);
+                 margin: var(--space-3) 0;
+             }
+             
+             .callout-box::after {
+                 font-size: clamp(1.25rem, 7vw, 1.75rem);
+                 top: var(--space-1);
+             }
+             
+             .callout-title {
+                 font-size: var(--text-base);
+                 margin-top: var(--space-5);
+             }
         }
 
         /* ===== UTILITY CLASSES ===== */

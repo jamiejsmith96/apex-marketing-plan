@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Wiring Solutions - Comprehensive Marketing Strategy</title>
+    <style>
+        /* ===== DESIGN SYSTEM ===== */
+        :root {
+            /* Brand Colors */
+            --apex-primary: #1e40af;
+            --apex-secondary: #0ea5e9;
+            --apex-accent: #f59e0b;
+            --apex-success: #10b981;
+            --apex-warning: #f59e0b;
+            --apex-error: #ef4444;
+            
+            /* Neutral Colors */
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            
+            /* Typography Scale */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            --text-6xl: 3.75rem;
+            
+            /* Spacing Scale */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            
+            /* Transitions */
+            --transition-fast: 150ms ease-in-out;
+            --transition-normal: 300ms ease-in-out;
+            --transition-slow: 500ms ease-in-out;
+        }
+
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== BRANDED SCROLLBAR ===== */
+        /* Webkit browsers (Chrome, Safari, Edge) */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--slate-100);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--apex-primary) 0%, var(--apex-secondary) 100%);
+            border-radius: 6px;
+            border: 2px solid var(--slate-100);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--apex-secondary) 0%, var(--apex-accent) 100%);
+        }
+
+        /* Firefox */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: var(--apex-primary) var(--slate-100);
+        }
+
+        /* ===== BRANDED CURSORS ===== */
+        * {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 4L20 12L12 14L10 22Z' fill='%231e40af' stroke='white' stroke-width='1'/%3E%3C/svg%3E") 4 4, auto;
+        }
+
+        a, button, .nav-btn, .feature-card, .metric-card, .comparison-card, [role="button"] {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 4L20 12L12 14L10 22Z' fill='%231e40af' stroke='white' stroke-width='1'/%3E%3C/svg%3E") 4 4, pointer;
+        }
+
+        input, textarea, select, [contenteditable] {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Crect x='11' y='2' width='2' height='20' fill='%231e40af'/%3E%3Crect x='8' y='2' width='8' height='2' fill='%231e40af'/%3E%3Crect x='8' y='20' width='8' height='2' fill='%231e40af'/%3E%3C/svg%3E") 12 12, text;
+        }
+
+        /* ===== CLICK ANIMATION EFFECT ===== */
+        .click-ripple {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(30, 64, 175, 0.4) 0%, rgba(30, 64, 175, 0.2) 50%, transparent 70%);
+            transform: scale(0);
+            animation: ripple-effect 0.6s ease-out;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        @keyframes ripple-effect {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* ===== HOVER GLOW EFFECTS ===== */
+        .nav-btn, .feature-card, .metric-card, .comparison-card {
+            position: relative;
+            overflow: visible;
+        }
+
+        .nav-btn::after, .feature-card::after, .metric-card::after, .comparison-card::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--apex-primary), var(--apex-secondary), var(--apex-accent), var(--apex-primary));
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            filter: blur(8px);
+            transition: opacity var(--transition-normal);
+        }
+
+        .nav-btn:hover::after, .feature-card:hover::after, .metric-card:hover::after, .comparison-card:hover::after {
+            opacity: 0.3;
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% {
+                opacity: 0.3;
+                filter: blur(8px);
+            }
+            50% {
+                opacity: 0.5;
+                filter: blur(12px);
+            }
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--slate-800);
+            background: linear-gradient(135deg, var(--slate-50) 0%, var(--slate-100) 100%);
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* ===== LAYOUT COMPONENTS ===== */
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--apex-primary) 0%, var(--apex-secondary) 100%);
+            z-index: 1000;
+            transition: width var(--transition-normal);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all var(--transition-slow);
+            background: white;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide.prev {
+            transform: translateX(-100%);
+        }
+
+        /* ===== SLIDE STRUCTURE ===== */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-6) var(--space-8);
+            background: linear-gradient(135deg, white 0%, var(--slate-50) 100%);
+            border-bottom: 3px solid transparent;
+            background-image: linear-gradient(135deg, white 0%, var(--slate-50) 100%), 
+                            linear-gradient(90deg, var(--apex-primary) 0%, var(--apex-secondary) 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            min-height: 80px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo {
+            height: 45px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            transition: all var(--transition-normal);
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+        }
+
+        .slide-number {
+            font-size: var(--text-sm);
+            color: var(--slate-500);
+            font-weight: 500;
+            background: var(--slate-100);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-md);
+        }
+
+        .slide-content {
+            flex: 1;
+            padding: var(--space-10);
+            overflow-y: auto;
+            background: linear-gradient(135deg, #fafbfc 0%, white 50%, #f8fafc 100%);
+            position: relative;
+        }
+
+        .slide-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(30, 64, 175, 0.03) 0%, transparent 50%),
+                       radial-gradient(circle at 70% 80%, rgba(14, 165, 233, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .slide-content > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .slide-title {
+            font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+            font-weight: 900;
+            color: var(--slate-900);
+            margin-bottom: var(--space-12);
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--apex-primary) 0%, var(--apex-secondary) 50%, var(--apex-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(30, 64, 175, 0.15);
+            letter-spacing: -0.02em;
+            position: relative;
+            padding-bottom: var(--space-4);
+        }
+
+        .slide-title::after {
+            content: '';
+            position: absolute;
+            bottom: var(--space-2);
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--apex-primary) 0%, var(--apex-secondary) 100%);
+            border-radius: 2px;
+        }
+
+        .slide-subtitle {
+            font-size: var(--text-2xl);
+            color: var(--slate-700);
+            margin-bottom: var(--space-8);
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: -0.015em;
+        }
+
+        /* ===== CONTENT COMPONENTS ===== */
+        .metric-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+            margin: var(--space-10) 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(145deg, white 0%, #fafbfc 100%);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-10);
+            box-shadow: 0 8px 32px rgba(30, 64, 175, 0.12);
+            border: 2px solid transparent;
+            background-image: linear-gradient(145deg, white 0%, #fafbfc 100%), 
+                            linear-gradient(135deg, var(--apex-primary) 0%, var(--apex-secondary) 50%, var(--apex-accent) 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            transition: all var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all var(--transition-slow);
+            opacity: 0;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
+        }
+
+        .metric-card:hover::after {
+            animation: shimmer 0.8s ease-out;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+
+        .metric-icon {
+            font-size: var(--text-5xl);
+            margin-bottom: var(--space-6);
+            display: block;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .metric-number {
+            font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--apex-primary) 0%, var(--apex-secondary) 50%, var(--apex-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: var(--space-4);
+            text-shadow: 0 4px 8px rgba(30, 64, 175, 0.15);
+        }
+
+        .metric-label {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--slate-800);
+            margin-bottom: var(--space-3);
+            letter-spacing: -0.025em;
+        }
+
+        .metric-description {
+            font-size: var(--text-base);
+            color: var(--slate-600);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-8);
+            margin: var(--space-10) 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, white 0%, #f8fafc 100%);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            background-image: linear-gradient(145deg, white 0%, #f8fafc 100%), 
+                            linear-gradient(135deg, var(--slate-200) 0%, var(--apex-primary) 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            transition: all var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.02) 0%, rgba(14, 165, 233, 0.02) 100%);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 12px 40px rgba(30, 64, 175, 0.15);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-6);
+            display: block;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-title {
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.025em;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-description {
+            color: var(--slate-700);
+            line-height: 1.7;
+            font-size: var(--text-lg);
+            font-weight: 500;
+            margin-bottom: var(--space-4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: var(--space-4);
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-2);
+            font-size: var(--text-sm);
+            color: var(--slate-600);
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: var(--apex-success);
+            font-weight: bold;
+            margin-right: var(--space-3);
+            background: var(--slate-100);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-xs);
+        }
+
+        .callout-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px solid var(--apex-primary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-12) var(--space-10) var(--space-10);
+            margin: var(--space-12) 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(30, 64, 175, 0.15);
+        }
+
+
+
+        .callout-box::after {
+            content: '💡';
+            position: absolute;
+            top: var(--space-4);
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: var(--text-2xl);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .callout-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--apex-primary);
+            margin-bottom: var(--space-4);
+            margin-top: var(--space-4);
+            letter-spacing: -0.01em;
+        }
+
+        .callout-text {
+            font-size: var(--text-lg);
+            color: var(--slate-700);
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .timeline {
+            position: relative;
+            margin: var(--space-12) 0;
+            padding-left: var(--space-4);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: var(--space-16);
+            margin-bottom: var(--space-12);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: var(--space-6);
+            top: var(--space-3);
+            width: var(--space-6);
+            height: var(--space-6);
+            background: linear-gradient(135deg, var(--apex-primary) 0%, var(--apex-secondary) 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 6px white, 0 0 0 8px var(--apex-primary), 0 4px 12px rgba(30, 64, 175, 0.3);
+            z-index: 2;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: calc(var(--space-6) + var(--space-3));
+            top: calc(var(--space-6) + var(--space-3));
+            width: 3px;
+            height: calc(100% + var(--space-6));
+            background: linear-gradient(180deg, var(--apex-primary) 0%, var(--apex-secondary) 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-content {
+            background: linear-gradient(145deg, white 0%, #fafbfc 100%);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.12);
+            border: 2px solid transparent;
+            background-image: linear-gradient(145deg, white 0%, #fafbfc 100%), 
+                            linear-gradient(135deg, var(--apex-primary) 0%, var(--apex-secondary) 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            position: relative;
+            z-index: 3;
+        }
+
+        .timeline-title {
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            color: var(--apex-primary);
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            letter-spacing: -0.02em;
+        }
+
+        .timeline-title .icon {
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-4);
+            margin: var(--space-8) 0;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            border: 2px solid var(--slate-200);
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+
+        .comparison-card.featured {
+            border-color: var(--apex-primary);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            transform: scale(1.02);
+        }
+
+        .comparison-card.featured::before {
+            content: '⭐';
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            font-size: var(--text-2xl);
+            background: linear-gradient(135deg, var(--apex-primary) 0%, var(--apex-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all var(--transition-normal);
+            transform-origin: center;
+            filter: drop-shadow(0 2px 4px rgba(30, 64, 175, 0.2));
+        }
+
+        .comparison-card.featured:hover::before {
+            transform: scale(1.3) rotate(12deg);
+            filter: drop-shadow(0 6px 12px rgba(30, 64, 175, 0.5));
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navigation {
+            position: fixed;
+            bottom: var(--space-8);
+            right: var(--space-8);
+            display: flex;
+            gap: var(--space-4);
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: white;
+            color: var(--apex-primary);
+            border: 2px solid var(--apex-primary);
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-lg);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            box-shadow: 0 2px 8px rgba(30, 64, 175, 0.1);
+            letter-spacing: 0.01em;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: var(--apex-primary);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+        }
+
+        .nav-btn:active:not(:disabled) {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(30, 64, 175, 0.15);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: var(--slate-100);
+            color: var(--slate-400);
+            border-color: var(--slate-300);
+            box-shadow: none;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            bottom: var(--space-6);
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            align-items: center;
+            gap: var(--space-4);
+            background: white;
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--slate-200);
+            z-index: 1000;
+        }
+
+        .slide-counter {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--slate-600);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .navigation {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: flex;
+            }
+            
+            .slide-content {
+                padding: var(--space-6);
+            }
+            
+            .metric-showcase {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+            
+            .slide-header {
+                padding: var(--space-4) var(--space-6);
+            }
+            
+            .logo {
+                height: 40px;
+            }
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        
+        .text-primary { color: var(--apex-primary); }
+        .text-secondary { color: var(--apex-secondary); }
+        .text-accent { color: var(--apex-accent); }
+        
+        .bg-primary { background-color: var(--apex-primary); }
+        .bg-secondary { background-color: var(--apex-secondary); }
+        
+        .mb-4 { margin-bottom: var(--space-4); }
+        .mb-6 { margin-bottom: var(--space-6); }
+        .mb-8 { margin-bottom: var(--space-8); }
+        
+        .mt-4 { margin-top: var(--space-4); }
+        .mt-6 { margin-top: var(--space-6); }
+        .mt-8 { margin-top: var(--space-8); }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Slide 1: Title Slide -->
+    <div class="slide active" id="slide1">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">1 / 15</div>
+        </div>
+                    <div class="slide-content">
+            <h1 class="slide-title">Apex Wiring Solutions</h1>
+            <h2 class="slide-subtitle">Comprehensive Marketing & Growth Strategy</h2>
+            
+            <div class="callout-box mt-8">
+                <div class="callout-title">Driving Growth Through Innovation</div>
+                <div class="callout-text">
+                    Digital transformation, market expansion, and brand excellence for the UK's leading modular wiring manufacturer
+                </div>
+            </div>
+            
+            <div class="metric-showcase">
+                <div class="metric-card">
+                    <div class="metric-icon">🏭</div>
+                    <div class="metric-number">1980</div>
+                    <div class="metric-label">Founded</div>
+                    <div class="metric-description">44+ years of modular wiring expertise</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">📍</div>
+                    <div class="metric-number">3</div>
+                    <div class="metric-label">Locations</div>
+                    <div class="metric-description">UK, UAE, and Australia operations</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">⚡</div>
+                    <div class="metric-number">70%</div>
+                    <div class="metric-label">Time Reduction</div>
+                    <div class="metric-description">Faster installation with modular systems</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Executive Summary -->
+    <div class="slide" id="slide2">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">2 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Executive Summary</h1>
+            <h2 class="slide-subtitle">Strategic Overview & Key Initiatives</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Market Expansion</div>
+                    <div class="feature-description">Target smaller contractors and B2B projects to diversify beyond large-scale construction</div>
+                    <ul class="feature-list">
+                        <li>Local SEO optimization</li>
+                        <li>Contractor-focused content</li>
+                        <li>Starter kit offerings</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <div class="feature-title">Digital Transformation</div>
+                    <div class="feature-description">Digital-first marketing approach with 3D demos and enhanced user experience</div>
+                    <ul class="feature-list">
+                        <li>3D animated product videos</li>
+                        <li>Website conversion optimization</li>
+                        <li>Advanced analytics tracking</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-title">Brand Excellence</div>
+                    <div class="feature-description">Unified brand identity across all touchpoints and channels</div>
+                    <ul class="feature-list">
+                        <li>Comprehensive style guide</li>
+                        <li>Consistent messaging</li>
+                        <li>Professional visual assets</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <div class="feature-title">Growth Metrics</div>
+                    <div class="feature-description">Measurable outcomes through enhanced visibility and lead generation</div>
+                    <ul class="feature-list">
+                        <li>Increased website traffic</li>
+                        <li>Higher conversion rates</li>
+                        <li>Expanded market reach</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Company Overview -->
+    <div class="slide" id="slide3">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">3 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Company Overview</h1>
+            <h2 class="slide-subtitle">UK's Leading Modular Wiring Manufacturer</h2>
+            
+            <div class="metric-showcase">
+                <div class="metric-card">
+                    <div class="metric-icon">🏢</div>
+                    <div class="metric-number">160k</div>
+                    <div class="metric-label">sq ft Facility</div>
+                    <div class="metric-description">Durham headquarters with full manufacturing capabilities</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🏗️</div>
+                    <div class="metric-number">533+</div>
+                    <div class="metric-label">Projects</div>
+                    <div class="metric-description">Successfully completed across multiple sectors</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">📏</div>
+                    <div class="metric-number">22M</div>
+                    <div class="metric-label">Meters Cable</div>
+                    <div class="metric-description">Delivered through modular systems</div>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <div class="feature-title">Healthcare Excellence</div>
+                    <div class="feature-description">Major hospital projects including St Bartholomew's, Royal London, and Queen Alexandra</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <div class="feature-title">Commercial Leadership</div>
+                    <div class="feature-description">Heathrow Terminal 5, Canary Wharf, and major office developments</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏘️</div>
+                    <div class="feature-title">Residential Scale</div>
+                    <div class="feature-description">London 2012 Olympics (3,000+ apartments), Unite Student Housing (50,000+ beds)</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <div class="feature-title">Global Reach</div>
+                    <div class="feature-description">NYU Abu Dhabi, Yas Marina Hotel, with operations across three continents</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Competitive Landscape -->
+    <div class="slide" id="slide4">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">4 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Competitive Landscape</h1>
+            <h2 class="slide-subtitle">Market Position & Competitive Advantages</h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="feature-icon">🏭</div>
+                    <div class="feature-title">Wieland Electric</div>
+                    <div class="feature-description">
+                        <strong>Strengths:</strong> Global presence, PREFAB® system, factory integration<br>
+                        <strong>Focus:</strong> Off-site construction, standards compliance
+                    </div>
+                </div>
+                <div class="comparison-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Schneider Electric</div>
+                    <div class="feature-description">
+                        <strong>Strengths:</strong> SQD prefab system, 100% factory-built solutions<br>
+                        <strong>Focus:</strong> Prewired distribution systems
+                    </div>
+                </div>
+                <div class="comparison-card">
+                    <div class="feature-icon">🏗️</div>
+                    <div class="feature-title">Modular Wiring Systems Ltd</div>
+                    <div class="feature-description">
+                        <strong>Strengths:</strong> 20+ years experience, UK market knowledge<br>
+                        <strong>Focus:</strong> Commercial projects, service reliability
+                    </div>
+                </div>
+                <div class="comparison-card featured">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Apex Competitive Edge</div>
+                    <div class="feature-description">
+                        <strong>Advantages:</strong> Better digital experience, visual content excellence, product clarity, proven track record with major UK projects, comprehensive sector expertise
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box">
+                <div class="callout-title">Market Differentiation</div>
+                <div class="callout-text">
+                    Apex's unique combination of technical excellence, proven project delivery, and enhanced digital presence positions us as the premium choice for discerning contractors and specifiers.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Market Trends & Opportunities -->
+    <div class="slide" id="slide5">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">5 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Market Trends & Opportunities</h1>
+            <h2 class="slide-subtitle">Growth Sectors & Market Dynamics</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏗️</div>
+                    <div class="feature-title">Modular Construction Boom</div>
+                    <div class="feature-description">Global market projected CAGR of 6.9% (2025-2032)</div>
+                    <ul class="feature-list">
+                        <li>Factory-built homes and apartments</li>
+                        <li>Prewired electrical modules demand</li>
+                        <li>Housing developers and offsite manufacturers</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <div class="feature-title">Healthcare Prefabrication</div>
+                    <div class="feature-description">20% faster delivery, 40% reduced on-site labour</div>
+                    <ul class="feature-list">
+                        <li>New hospital builds and expansions</li>
+                        <li>Proven healthcare track record</li>
+                        <li>Critical timeline requirements</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <div class="feature-title">Data Centers & IT</div>
+                    <div class="feature-description">Precision wiring for critical infrastructure</div>
+                    <ul class="feature-list">
+                        <li>Extensive wiring requirements</li>
+                        <li>Uptime-critical applications</li>
+                        <li>Office fitout partnerships</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <div class="feature-title">Retail & Hospitality</div>
+                    <div class="feature-description">Efficient electrical fit-outs for rapid deployment</div>
+                    <ul class="feature-list">
+                        <li>Chain store fitouts</li>
+                        <li>Hotel experience leverage</li>
+                        <li>Modular lighting rail systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title"><span class="icon">🎯</span> Immediate Opportunities</div>
+                        <p>Target adjacent segments from existing client base - hospital wings to commercial wings, education expansions, student housing growth</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title"><span class="icon">🌐</span> International Expansion</div>
+                        <p>Leverage UAE/Australia presence, explore Southeast Asia and North America where prefab construction is accelerating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Brand Identity Strategy -->
+    <div class="slide" id="slide6">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">6 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Brand Identity Strategy</h1>
+            <h2 class="slide-subtitle">Unified Brand Excellence Across All Touchpoints</h2>
+            
+            <div class="callout-box">
+                <div class="callout-title">Brand Promise</div>
+                <div class="callout-text">
+                    "Apex Modular Wiring – faster, safer installations" consistently delivered across every customer interaction
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-title">Visual Identity System</div>
+                    <div class="feature-description">Comprehensive style guide defining all visual elements</div>
+                    <ul class="feature-list">
+                        <li>Logo usage standards</li>
+                        <li>Color palette definition</li>
+                        <li>Typography hierarchy</li>
+                        <li>Brand asset templates</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-title">Tone of Voice</div>
+                    <div class="feature-description">Professional yet approachable communication style</div>
+                    <ul class="feature-list">
+                        <li>Technical expertise emphasis</li>
+                        <li>Trust and reliability focus</li>
+                        <li>Innovation leadership</li>
+                        <li>Customer success stories</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-title">Digital Consistency</div>
+                    <div class="feature-description">Unified experience across all digital platforms</div>
+                    <ul class="feature-list">
+                        <li>Website brand integration</li>
+                        <li>Social media templates</li>
+                        <li>Email communications</li>
+                        <li>Digital advertising</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <div class="feature-title">Print Materials</div>
+                    <div class="feature-description">Professional sales collateral and documentation</div>
+                    <ul class="feature-list">
+                        <li>Brochure design standards</li>
+                        <li>Proposal templates</li>
+                        <li>Trade show materials</li>
+                        <li>Business stationery</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="metric-showcase">
+                <div class="metric-card">
+                    <div class="metric-icon">🎯</div>
+                    <div class="metric-number">100%</div>
+                    <div class="metric-label">Brand Consistency</div>
+                    <div class="metric-description">Across all customer touchpoints</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">💡</div>
+                    <div class="metric-number">70%</div>
+                    <div class="metric-label">Time Savings</div>
+                    <div class="metric-description">Core value proposition messaging</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Digital Marketing Strategy -->
+    <div class="slide" id="slide7">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">7 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Digital Marketing Strategy</h1>
+            <h2 class="slide-subtitle">Digital-First Approach for Maximum Impact</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-title">SEO & Content Marketing</div>
+                    <div class="feature-description">Organic visibility for high-value keywords</div>
+                    <ul class="feature-list">
+                        <li>Target: "modular wiring systems", "prefab lighting"</li>
+                        <li>Fresh content: case studies, installation tips</li>
+                        <li>Google Business Profile optimization</li>
+                        <li>Local SEO for contractor searches</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <div class="feature-title">Paid Digital Advertising</div>
+                    <div class="feature-description">Targeted campaigns for qualified leads</div>
+                    <ul class="feature-list">
+                        <li>Google Ads: "plug and play wiring suppliers UK"</li>
+                        <li>LinkedIn Sponsored Content for specifiers</li>
+                        <li>Remarketing for website visitors</li>
+                        <li>Display advertising for brand awareness</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <div class="feature-title">Email Marketing</div>
+                    <div class="feature-description">Nurture leads and maintain relationships</div>
+                    <ul class="feature-list">
+                        <li>Newsletter from site sign-ups</li>
+                        <li>Product innovation updates</li>
+                        <li>Project highlight campaigns</li>
+                        <li>Trade show contact follow-up</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-title">Social Media Strategy</div>
+                    <div class="feature-description">Professional presence and thought leadership</div>
+                    <ul class="feature-list">
+                        <li>LinkedIn project news and insights</li>
+                        <li>Employee advocacy programs</li>
+                        <li>Industry trend commentary</li>
+                        <li>Video content distribution</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">🎯 Phase 1: Foundation</div>
+                        <p>Website optimization, Google Business Profile setup, basic SEO implementation</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">🚀 Phase 2: Acceleration</div>
+                        <p>Paid advertising launch, content marketing program, email automation</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">📈 Phase 3: Optimization</div>
+                        <p>Advanced analytics, A/B testing, conversion rate optimization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Traditional Marketing & Trade Shows -->
+    <div class="slide" id="slide8">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">8 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Traditional Marketing & Trade Shows</h1>
+            <h2 class="slide-subtitle">Building Trust Through Established Channels</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📰</div>
+                    <div class="feature-title">Trade Publications</div>
+                    <div class="feature-description">Strategic presence in industry-leading publications</div>
+                    <ul class="feature-list">
+                        <li>Electrical Times, ESI Magazine</li>
+                        <li>Construction News, Healthcare Estates</li>
+                        <li>Advertorials and thought leadership</li>
+                        <li>Headlines: "Reduce Site Labour by 70%"</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📬</div>
+                    <div class="feature-title">Direct Mail & Brochures</div>
+                    <div class="feature-description">High-impact print materials for key prospects</div>
+                    <ul class="feature-list">
+                        <li>Targeted architect and contractor lists</li>
+                        <li>QR codes linking to demo videos</li>
+                        <li>Premium branded materials</li>
+                        <li>77% higher recall vs digital</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <div class="feature-title">Trade Show Excellence</div>
+                    <div class="feature-description">Professional presence at key industry events</div>
+                    <ul class="feature-list">
+                        <li>UK Construction Week, Elec Expo</li>
+                        <li>Healthcare Estates, Modular Building</li>
+                        <li>Live demonstrations and 3D videos</li>
+                        <li>Lead collection via QR codes</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <div class="feature-title">Sales Collateral</div>
+                    <div class="feature-description">Professional materials for sales process</div>
+                    <ul class="feature-list">
+                        <li>Unified branded proposals</li>
+                        <li>3D cutaway visualizations</li>
+                        <li>Case study presentations</li>
+                        <li>Technical specification sheets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout-box">
+                <div class="callout-title">Integrated Approach</div>
+                <div class="callout-text">
+                    Coordinate print and digital for maximum impact - magazine readers who Google Apex should find optimized website and instant demo videos
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Expanding to Smaller Contractors -->
+    <div class="slide" id="slide9">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">9 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Expanding to Smaller Contractors</h1>
+            <h2 class="slide-subtitle">Diversifying Beyond Large-Scale Construction</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-title">Targeted Content & SEO</div>
+                    <div class="feature-description">Content strategy for smaller commercial projects</div>
+                    <ul class="feature-list">
+                        <li>Keywords: "prefabricated wiring UK"</li>
+                        <li>Small commercial case studies</li>
+                        <li>Installation guide content</li>
+                        <li>Local search optimization</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Digital Advertising</div>
+                    <div class="feature-description">Precision targeting for contractor audiences</div>
+                    <ul class="feature-list">
+                        <li>Google Ads: "modular wiring solutions"</li>
+                        <li>LinkedIn targeting electrical contractors</li>
+                        <li>Quick-install benefit messaging</li>
+                        <li>Local service area campaigns</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <div class="feature-title">Value Kits & Demos</div>
+                    <div class="feature-description">Lower barrier to entry for smaller firms</div>
+                    <ul class="feature-list">
+                        <li>Standard lighting wiring modules</li>
+                        <li>Starter kit demonstrations</li>
+                        <li>Email newsletter promotion</li>
+                        <li>Trade association partnerships</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-title">Local Partnerships</div>
+                    <div class="feature-description">Building relationships with regional contractors</div>
+                    <ul class="feature-list">
+                        <li>Builder group collaborations</li>
+                        <li>M&E contractor webinars</li>
+                        <li>Cost savings workshops</li>
+                        <li>Google Business Profile optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">🎯 Market Segmentation</div>
+                        <p>Treat smaller firms as distinct segment with dedicated messaging and offerings</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">📱 Social Media Focus</div>
+                        <p>LinkedIn and Facebook for bite-sized success stories and contractor engagement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Content Strategy - 3D Demos & Education -->
+    <div class="slide" id="slide10">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">10 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Content Strategy</h1>
+            <h2 class="slide-subtitle">3D Demos & Educational Content Excellence</h2>
+            
+            <div class="callout-box">
+                <div class="callout-title">3D Animation Strategy</div>
+                <div class="callout-text">
+                    Transform AutoCAD models into engaging Blender 3D animations demonstrating plug-and-play assembly and 70% installation time benefits
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <div class="feature-title">Video Content Production</div>
+                    <div class="feature-description">Professional 3D animated demonstrations</div>
+                    <ul class="feature-list">
+                        <li>1-2 minute explainer videos</li>
+                        <li>Assembly step visualization</li>
+                        <li>Finished installation showcases</li>
+                        <li>Speed and clarity emphasis</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📺</div>
+                    <div class="feature-title">Multi-Channel Distribution</div>
+                    <div class="feature-description">Strategic video deployment across platforms</div>
+                    <ul class="feature-list">
+                        <li>Product page embeds</li>
+                        <li>LinkedIn engagement content</li>
+                        <li>YouTube SEO optimization</li>
+                        <li>Email campaign integration</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <div class="feature-title">Accessibility & SEO</div>
+                    <div class="feature-description">Inclusive content with search optimization</div>
+                    <ul class="feature-list">
+                        <li>Captions for all videos</li>
+                        <li>Transcript provision</li>
+                        <li>Search engine friendly</li>
+                        <li>WCAG 2.1 compliance</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">Educational Content Mix</div>
+                    <div class="feature-description">Diverse content types for engagement</div>
+                    <ul class="feature-list">
+                        <li>Installation tutorials</li>
+                        <li>ROI calculators</li>
+                        <li>Industry trend analysis</li>
+                        <li>Interactive infographics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="metric-showcase">
+                <div class="metric-card">
+                    <div class="metric-icon">🎯</div>
+                    <div class="metric-number">Premium</div>
+                    <div class="metric-label">Brand Perception</div>
+                    <div class="metric-description">High-tech image through quality 3D content</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">📈</div>
+                    <div class="metric-number">High</div>
+                    <div class="metric-label">Engagement</div>
+                    <div class="metric-description">B2B video content drives clicks and shares</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: Website & Conversion Optimization -->
+    <div class="slide" id="slide11">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">11 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Website & Conversion Optimization</h1>
+            <h2 class="slide-subtitle">Maximizing Traffic and Lead Generation</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Performance Optimization</div>
+                    <div class="feature-description">Fast, mobile-friendly user experience</div>
+                    <ul class="feature-list">
+                        <li>Mobile-first responsive design</li>
+                        <li>Page load speed optimization</li>
+                        <li>Intuitive navigation structure</li>
+                        <li>Industry-specific sections</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Conversion Elements</div>
+                    <div class="feature-description">Strategic calls-to-action and lead capture</div>
+                    <ul class="feature-list">
+                        <li>Prominent "Request Quote" buttons</li>
+                        <li>Calendar booking integration</li>
+                        <li>Live chat and chatbot</li>
+                        <li>Simple contact forms</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <div class="feature-title">Visual Excellence</div>
+                    <div class="feature-description">High-quality product visualization</div>
+                    <ul class="feature-list">
+                        <li>CAD renders and 3D models</li>
+                        <li>Project photography</li>
+                        <li>Installation process imagery</li>
+                        <li>Product specification visuals</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <div class="feature-title">Social Proof</div>
+                    <div class="feature-description">Credibility through client showcases</div>
+                    <ul class="feature-list">
+                        <li>Client logos (Skanska, Unite)</li>
+                        <li>Project statistics display</li>
+                        <li>Case study highlights</li>
+                        <li>Testimonials and reviews</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">📊 Analytics Setup</div>
+                        <p>Google Analytics 4, conversion tracking, Hotjar heatmaps for user behavior analysis</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">🧪 A/B Testing</div>
+                        <p>Continuous optimization of headlines, CTAs, and page layouts based on performance data</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Implementation Timeline -->
+    <div class="slide" id="slide12">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">12 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Implementation Timeline</h1>
+            <h2 class="slide-subtitle">Phased Approach to Strategic Execution</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title"><span class="icon">🏗️</span> Phase 1: Foundation</div>
+                        <div class="feature-grid" style="margin-top: 1rem;">
+                            <div class="feature-card">
+                                <div class="feature-title">Brand Development</div>
+                                <ul class="feature-list">
+                                    <li>Finalize comprehensive style guide</li>
+                                    <li>Create brand asset library</li>
+                                    <li>Update logo and visual standards</li>
+                                </ul>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-title">Website Enhancement</div>
+                                <ul class="feature-list">
+                                    <li>Site refresh and optimization</li>
+                                    <li>Mobile responsiveness</li>
+                                    <li>SEO foundation setup</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title"><span class="icon">🚀</span> Phase 2: Content & Digital</div>
+                        <div class="feature-grid" style="margin-top: 1rem;">
+                            <div class="feature-card">
+                                <div class="feature-title">3D Content Production</div>
+                                <ul class="feature-list">
+                                    <li>AutoCAD to Blender animations</li>
+                                    <li>Product demonstration videos</li>
+                                    <li>Installation tutorials</li>
+                                </ul>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-title">Digital Marketing Launch</div>
+                                <ul class="feature-list">
+                                    <li>Google Ads campaigns</li>
+                                    <li>LinkedIn advertising</li>
+                                    <li>Email automation setup</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">🎯 Phase 3: Market Expansion</div>
+                        <div class="feature-grid" style="margin-top: 1rem;">
+                            <div class="feature-card">
+                                <div class="feature-title">Contractor Outreach</div>
+                                <ul class="feature-list">
+                                    <li>Smaller contractor targeting</li>
+                                    <li>Starter kit development</li>
+                                    <li>Local partnership building</li>
+                                </ul>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-title">Trade Show Presence</div>
+                                <ul class="feature-list">
+                                    <li>Professional booth design</li>
+                                    <li>Demo video integration</li>
+                                    <li>Lead generation systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">📈 Phase 4: Optimization & Scale (Ongoing)</div>
+                        <div class="feature-grid" style="margin-top: 1rem;">
+                            <div class="feature-card">
+                                <div class="feature-title">Performance Analysis</div>
+                                <ul class="feature-list">
+                                    <li>Monthly reporting and metrics</li>
+                                    <li>Campaign optimization</li>
+                                    <li>ROI measurement and improvement</li>
+                                </ul>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-title">Growth Initiatives</div>
+                                <ul class="feature-list">
+                                    <li>Market expansion programs</li>
+                                    <li>New sector targeting</li>
+                                    <li>International opportunities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Budget Allocation & Investment -->
+    <div class="slide" id="slide13">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">13 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Budget Allocation & Investment</h1>
+            <h2 class="slide-subtitle">Strategic Resource Distribution for Maximum ROI</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <div class="feature-title">Digital Marketing (40%)</div>
+                    <div class="feature-description">Primary investment in digital channels</div>
+                    <ul class="feature-list">
+                        <li>Google Ads and LinkedIn campaigns</li>
+                        <li>SEO tools and content creation</li>
+                        <li>Website optimization and analytics</li>
+                        <li>Email marketing automation</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <div class="feature-title">Content Production (25%)</div>
+                    <div class="feature-description">High-quality visual content creation</div>
+                    <ul class="feature-list">
+                        <li>3D animation and video production</li>
+                        <li>Photography and graphic design</li>
+                        <li>Interactive content development</li>
+                        <li>Content management systems</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📰</div>
+                    <div class="feature-title">Traditional Marketing (20%)</div>
+                    <div class="feature-description">Established industry channels</div>
+                    <ul class="feature-list">
+                        <li>Trade publication advertising</li>
+                        <li>Direct mail campaigns</li>
+                        <li>Print collateral production</li>
+                        <li>Industry directory listings</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <div class="feature-title">Events & Trade Shows (15%)</div>
+                    <div class="feature-description">Face-to-face relationship building</div>
+                    <ul class="feature-list">
+                        <li>Exhibition space and booth design</li>
+                        <li>Demo equipment and displays</li>
+                        <li>Travel and accommodation</li>
+                        <li>Lead capture technology</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="metric-showcase">
+                <div class="metric-card">
+                    <div class="metric-icon">📊</div>
+                    <div class="metric-number">3-6</div>
+                    <div class="metric-label">ROI Timeline</div>
+                    <div class="metric-description">Expected payback period for marketing investment</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">📈</div>
+                    <div class="metric-number">25%</div>
+                    <div class="metric-label">Lead Increase</div>
+                    <div class="metric-description">Target improvement in qualified leads</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🎯</div>
+                    <div class="metric-number">40%</div>
+                    <div class="metric-label">Digital Focus</div>
+                    <div class="metric-description">Primary investment in digital channels</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 14: Expected ROI & Impact -->
+    <div class="slide" id="slide14">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">14 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Expected ROI & Impact</h1>
+            <h2 class="slide-subtitle">Measurable Outcomes and Success Metrics</h2>
+            
+            <div class="metric-showcase">
+                <div class="metric-card">
+                    <div class="metric-icon">📈</div>
+                    <div class="metric-number">150%</div>
+                    <div class="metric-label">Website Traffic</div>
+                    <div class="metric-description">Increase through SEO and content marketing</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🎯</div>
+                    <div class="metric-number">200%</div>
+                    <div class="metric-label">Lead Quality</div>
+                    <div class="metric-description">Improvement in qualified inquiry conversion</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🌐</div>
+                    <div class="metric-number">300%</div>
+                    <div class="metric-label">Digital Reach</div>
+                    <div class="metric-description">Expansion of online brand presence</div>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">Short-term Gains</div>
+                    <div class="feature-description">Immediate impact measurements</div>
+                    <ul class="feature-list">
+                        <li>25% increase in website inquiries</li>
+                        <li>Enhanced brand recognition</li>
+                        <li>Improved search engine rankings</li>
+                        <li>Professional market presence</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <div class="feature-title">Medium-term Growth</div>
+                    <div class="feature-description">Strategic momentum building</div>
+                    <ul class="feature-list">
+                        <li>New market segment penetration</li>
+                        <li>Increased project pipeline</li>
+                        <li>Enhanced customer relationships</li>
+                        <li>Competitor differentiation</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <div class="feature-title">Long-term Success</div>
+                    <div class="feature-description">Sustainable competitive advantage</div>
+                    <ul class="feature-list">
+                        <li>Market leadership reinforcement</li>
+                        <li>Premium brand positioning</li>
+                        <li>Sustainable growth trajectory</li>
+                        <li>International expansion readiness</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <div class="feature-title">Key Performance Indicators</div>
+                    <div class="feature-description">Measurable success metrics</div>
+                    <ul class="feature-list">
+                        <li>Monthly lead generation reports</li>
+                        <li>Website conversion analytics</li>
+                        <li>Brand awareness surveys</li>
+                        <li>Revenue attribution tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout-box">
+                <div class="callout-title">Investment Return</div>
+                <div class="callout-text">
+                    Expected 3-5x return on marketing investment through enhanced lead generation, improved conversion rates, and strategic market expansion
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 15: Next Steps & Conclusion -->
+    <div class="slide" id="slide15">
+        <div class="slide-header">
+            <img src="Apex-Wiring-Logo-RGB.png" alt="Apex Wiring Solutions" class="logo">
+            <div class="slide-number">15 / 15</div>
+        </div>
+        <div class="slide-content">
+            <h1 class="slide-title">Next Steps & Conclusion</h1>
+            <h2 class="slide-subtitle">Ready for Implementation</h2>
+            
+            <div class="callout-box">
+                <div class="callout-title">Strategic Vision</div>
+                <div class="callout-text">
+                    Transform Apex Wiring Solutions into the digital leader of the modular wiring industry while maintaining our technical excellence and proven track record
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">🎯 Immediate Actions</div>
+                        <p>Approve budget allocation, finalize brand guidelines, begin website optimization planning</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">🚀 Quick Wins</div>
+                        <p>Launch Google Business Profile optimization, initiate content planning, begin digital advertising setup</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-title">📈 Strategic Implementation</div>
+                        <p>Execute full marketing strategy, monitor performance metrics, optimize based on results</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">Monthly Reporting</div>
+                    <div class="feature-description">Regular performance monitoring</div>
+                    <ul class="feature-list">
+                        <li>Traffic and lead analytics</li>
+                        <li>Campaign performance metrics</li>
+                        <li>ROI measurement</li>
+                        <li>Strategic recommendations</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Success Factors</div>
+                    <div class="feature-description">Critical elements for achievement</div>
+                    <ul class="feature-list">
+                        <li>Executive commitment and support</li>
+                        <li>Cross-team collaboration</li>
+                        <li>Consistent brand implementation</li>
+                        <li>Continuous optimization mindset</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="metric-showcase text-center">
+                <div class="metric-card">
+                    <div class="metric-icon">🏆</div>
+                    <div class="metric-number">Ready</div>
+                    <div class="metric-label">Implementation</div>
+                    <div class="metric-description">Comprehensive strategy prepared for execution</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()" id="prevBtn">← Previous</button>
+        <button class="nav-btn" onclick="nextSlide()" id="nextBtn">Next →</button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <button class="nav-btn" onclick="previousSlide()" id="mobilePrevBtn">←</button>
+        <span class="slide-counter" id="slideCounter">1/15</span>
+        <button class="nav-btn" onclick="nextSlide()" id="mobileNextBtn">→</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 15;
+
+        // ===== CLICK RIPPLE EFFECT =====
+        function createClickRipple(e) {
+            const ripple = document.createElement('div');
+            ripple.className = 'click-ripple';
+            
+            const size = 50;
+            ripple.style.width = size + 'px';
+            ripple.style.height = size + 'px';
+            ripple.style.left = (e.clientX - size / 2) + 'px';
+            ripple.style.top = (e.clientY - size / 2) + 'px';
+            
+            document.body.appendChild(ripple);
+            
+            // Remove the ripple after animation
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+
+        // Add click ripple to all clicks
+        document.addEventListener('click', createClickRipple);
+
+        function updateSlide() {
+            // Hide all slides
+            for (let i = 1; i <= totalSlides; i++) {
+                const slide = document.getElementById(`slide${i}`);
+                slide.classList.remove('active', 'prev');
+                if (i < currentSlide) {
+                    slide.classList.add('prev');
+                } else if (i === currentSlide) {
+                    slide.classList.add('active');
+                }
+            }
+
+            // Update progress bar
+            const progress = (currentSlide / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+
+            // Update slide counters
+            document.querySelectorAll('.slide-number').forEach((element, index) => {
+                element.textContent = `${index + 1} / ${totalSlides}`;
+            });
+            document.getElementById('slideCounter').textContent = `${currentSlide}/${totalSlides}`;
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+            document.getElementById('mobilePrevBtn').disabled = currentSlide === 1;
+            document.getElementById('mobileNextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        function goToSlide(slideNumber) {
+            if (slideNumber >= 1 && slideNumber <= totalSlides) {
+                currentSlide = slideNumber;
+                updateSlide();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            switch(event.key) {
+                case 'ArrowRight':
+                case ' ':
+                    event.preventDefault();
+                    nextSlide();
+                    break;
+                case 'ArrowLeft':
+                    event.preventDefault();
+                    previousSlide();
+                    break;
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    event.preventDefault();
+                    const num = parseInt(event.key);
+                    if (num <= totalSlides) {
+                        goToSlide(num);
+                    }
+                    break;
+                case 'Home':
+                    event.preventDefault();
+                    goToSlide(1);
+                    break;
+                case 'End':
+                    event.preventDefault();
+                    goToSlide(totalSlides);
+                    break;
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(event) {
+            touchStartX = event.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(event) {
+            touchEndX = event.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next slide
+                    nextSlide();
+                } else {
+                    // Swipe right - previous slide
+                    previousSlide();
+                }
+            }
+        }
+
+        // Initialize
+        updateSlide();
+
+        // Prevent context menu on long press for mobile
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Enhanced loading animation
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+            
+            // Animate in the first slide elements
+            setTimeout(() => {
+                const firstSlide = document.querySelector('.slide.active');
+                if (firstSlide) {
+                    const elements = firstSlide.querySelectorAll('.metric-card, .feature-card, .callout-box');
+                    elements.forEach((el, index) => {
+                        el.style.opacity = '0';
+                        el.style.transform = 'translateY(30px)';
+                        setTimeout(() => {
+                            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                }
+            }, 300);
+        });
+    </script>
+</body>
+</html> 

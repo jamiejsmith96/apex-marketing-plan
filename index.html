@@ -776,39 +776,57 @@
                 margin: var(--space-6) 0;
             }
             
-            .metric-card {
-                padding: var(--space-5);
-                border-radius: var(--radius-lg);
-            }
-            
-            .metric-number {
-                font-size: clamp(1.5rem, 8vw, 2.5rem);
-            }
-            
-            .metric-label {
-                font-size: var(--text-sm);
-                margin: var(--space-2) 0;
-            }
-            
-            .metric-description {
-                font-size: var(--text-xs);
-                line-height: 1.4;
-            }
+                         .metric-card {
+                 padding: var(--space-5);
+                 border-radius: var(--radius-lg);
+                 text-align: center;
+             }
+             
+             .metric-icon {
+                 font-size: clamp(2rem, 8vw, 3rem);
+                 margin-bottom: var(--space-4);
+                 margin-top: var(--space-2);
+                 line-height: 1;
+                 display: block;
+             }
+             
+             .metric-number {
+                 font-size: clamp(1.5rem, 8vw, 2.5rem);
+             }
+             
+             .metric-label {
+                 font-size: var(--text-sm);
+                 margin: var(--space-2) 0;
+             }
+             
+             .metric-description {
+                 font-size: var(--text-xs);
+                 line-height: 1.4;
+             }
             
             .feature-grid {
                 grid-template-columns: 1fr;
                 gap: var(--space-3);
             }
             
-            .feature-card {
-                padding: var(--space-4);
-                border-radius: var(--radius-lg);
-            }
-            
-            .feature-title {
-                font-size: var(--text-lg);
-                margin-bottom: var(--space-2);
-            }
+                         .feature-card {
+                 padding: var(--space-4);
+                 border-radius: var(--radius-lg);
+                 text-align: center;
+             }
+             
+             .feature-icon {
+                 font-size: clamp(1.75rem, 7vw, 2.5rem);
+                 margin-bottom: var(--space-3);
+                 margin-top: var(--space-1);
+                 line-height: 1;
+                 display: block;
+             }
+             
+             .feature-title {
+                 font-size: var(--text-lg);
+                 margin-bottom: var(--space-2);
+             }
             
             .feature-description {
                 font-size: var(--text-sm);
@@ -918,9 +936,22 @@
                 margin-bottom: var(--space-3);
             }
             
-            .metric-card, .feature-card {
-                padding: var(--space-3);
-            }
+                         .metric-card, .feature-card {
+                 padding: var(--space-3);
+                 text-align: center;
+             }
+             
+             .metric-icon {
+                 font-size: clamp(1.5rem, 10vw, 2.25rem);
+                 margin: var(--space-2) auto var(--space-3);
+                 line-height: 1;
+             }
+             
+             .feature-icon {
+                 font-size: clamp(1.25rem, 9vw, 2rem);
+                 margin: var(--space-1) auto var(--space-2);
+                 line-height: 1;
+             }
             
             .slide-header {
                 padding: var(--space-2) var(--space-3);

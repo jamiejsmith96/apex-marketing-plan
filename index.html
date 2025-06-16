@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=0.3, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#ffffff">
     <title>Apex Wiring Solutions - Comprehensive Marketing Strategy</title>
     
     <!-- Favicon -->
@@ -191,7 +193,7 @@
             overflow: hidden;
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
-            min-width: 1200px;
+            min-height: 100vh;
         }
 
         body.loaded {
@@ -743,8 +745,108 @@
             text-align: center;
         }
 
-        /* ===== RESPONSIVE DESIGN REMOVED FOR MOBILE COMPATIBILITY ===== */
-        /* Mobile will display desktop version */
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+                overflow-y: auto;
+                background: white;
+            }
+            
+            .presentation-container {
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .slide {
+                position: static;
+                transform: none !important;
+                opacity: 1 !important;
+                height: auto;
+                min-height: 100vh;
+                background: white;
+            }
+            
+            .slide:not(.active) {
+                display: none;
+            }
+            
+            .slide.active {
+                display: flex;
+            }
+            
+            .navigation {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: flex;
+                position: fixed;
+                bottom: 20px;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .slide-content {
+                padding: var(--space-4);
+                overflow-y: visible;
+                background: white;
+                flex: 1;
+            }
+            
+            .slide-content::before {
+                display: none;
+            }
+            
+            .metric-showcase {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+                margin: var(--space-6) 0;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+            
+            .slide-header {
+                padding: var(--space-4) var(--space-6);
+                background: white;
+                border-bottom: 2px solid var(--slate-200);
+            }
+            
+            .logo {
+                height: 35px;
+            }
+            
+            .slide-title {
+                font-size: var(--text-3xl);
+                margin-bottom: var(--space-6);
+            }
+            
+            .slide-subtitle {
+                font-size: var(--text-lg);
+                margin-bottom: var(--space-6);
+            }
+            
+            .metric-card {
+                padding: var(--space-4);
+                background: white;
+                border: 2px solid var(--slate-100);
+            }
+            
+            .feature-card {
+                padding: var(--space-4);
+                background: white;
+                border: 2px solid var(--slate-100);
+            }
+        }
 
         /* ===== UTILITY CLASSES ===== */
         .text-center { text-align: center; }

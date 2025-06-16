@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Apex Wiring Solutions - Comprehensive Marketing Strategy</title>
     
     <!-- Favicon -->
@@ -10,19 +10,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="Apex-Wiring-Logo-RGB.png">
     <link rel="shortcut icon" href="Apex-Wiring-Logo-RGB.png">
     <link rel="apple-touch-icon" sizes="180x180" href="Apex-Wiring-Logo-RGB.png">
-    
-    <!-- Force Light Mode - Prevent System Dark Mode Override -->
-    <meta name="color-scheme" content="light only">
-    <meta name="supported-color-schemes" content="light">
-    <meta name="theme-color" content="#f8fafc">
-    
-    <!-- Additional WebKit Dark Mode Prevention -->
-    <style>
-        /* Prevent WebKit from applying any automatic dark mode */
-        html { -webkit-color-scheme: light only !important; }
-        body { -webkit-color-scheme: light only !important; }
-        * { -webkit-color-scheme: light only !important; }
-    </style>
     <style>
         /* ===== DESIGN SYSTEM ===== */
         :root {
@@ -95,77 +82,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        /* ===== FORCE LIGHT MODE - AGGRESSIVE OVERRIDE ===== */
-        html {
-            color-scheme: light only !important;
-            background: #f8fafc !important;
-            filter: none !important;
-        }
-
-        body {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
-            color: #1e293b !important;
-            filter: none !important;
-        }
-
-        /* Aggressive override for ALL elements */
-        *, *::before, *::after {
-            color-scheme: light only !important;
-            filter: none !important;
-        }
-
-        /* Override dark mode at media query level */
-        @media (prefers-color-scheme: dark) {
-            html {
-                color-scheme: light only !important;
-                background: #f8fafc !important;
-                filter: none !important;
-            }
-            
-            body {
-                background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
-                color: #1e293b !important;
-                filter: none !important;
-            }
-            
-            *, *::before, *::after {
-                background-color: inherit !important;
-                color: inherit !important;
-                border-color: inherit !important;
-                filter: none !important;
-                color-scheme: light only !important;
-            }
-
-            /* Force specific element colors */
-            h1, h2, h3, h4, h5, h6 {
-                color: #1e293b !important;
-            }
-
-            p, span, div, section, article {
-                color: #1e293b !important;
-                background-color: transparent !important;
-            }
-
-            /* Override any webkit appearance changes */
-            input, textarea, select, button {
-                -webkit-appearance: none !important;
-                appearance: none !important;
-                color-scheme: light only !important;
-            }
-        }
-
-        /* Additional webkit dark mode overrides */
-        @media (prefers-color-scheme: dark) {
-            ::-webkit-scrollbar {
-                background: #f1f5f9 !important;
-            }
-            
-            ::-webkit-scrollbar-thumb {
-                background: linear-gradient(135deg, #1e40af 0%, #0ea5e9 100%) !important;
-                border: 2px solid #f1f5f9 !important;
-            }
         }
 
         /* ===== BRANDED SCROLLBAR ===== */
@@ -837,30 +753,182 @@
             }
             
             .slide-content {
-                padding: var(--space-6);
+                padding: var(--space-4) var(--space-3);
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            
+            .slide-title {
+                font-size: clamp(1.75rem, 6vw, 2.5rem);
+                margin-bottom: var(--space-6);
+                line-height: 1.1;
+            }
+            
+            .slide-subtitle {
+                font-size: clamp(1rem, 4vw, 1.25rem);
+                margin-bottom: var(--space-4);
+                line-height: 1.3;
             }
             
             .metric-showcase {
                 grid-template-columns: 1fr;
-                gap: var(--space-4);
+                gap: var(--space-3);
+                margin: var(--space-6) 0;
+            }
+            
+            .metric-card {
+                padding: var(--space-5);
+                border-radius: var(--radius-lg);
+            }
+            
+            .metric-number {
+                font-size: clamp(1.5rem, 8vw, 2.5rem);
+            }
+            
+            .metric-label {
+                font-size: var(--text-sm);
+                margin: var(--space-2) 0;
+            }
+            
+            .metric-description {
+                font-size: var(--text-xs);
+                line-height: 1.4;
             }
             
             .feature-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-4);
+                gap: var(--space-3);
+            }
+            
+            .feature-card {
+                padding: var(--space-4);
+                border-radius: var(--radius-lg);
+            }
+            
+            .feature-title {
+                font-size: var(--text-lg);
+                margin-bottom: var(--space-2);
+            }
+            
+            .feature-description {
+                font-size: var(--text-sm);
+                line-height: 1.4;
+                margin-bottom: var(--space-3);
+            }
+            
+            .feature-list {
+                font-size: var(--text-xs);
+            }
+            
+            .feature-list li {
+                margin-bottom: var(--space-1);
+                padding-left: var(--space-3);
             }
             
             .comparison-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-4);
+                gap: var(--space-3);
             }
             
             .slide-header {
-                padding: var(--space-4) var(--space-6);
+                padding: var(--space-3) var(--space-4);
+                min-height: 60px;
             }
             
             .logo {
-                height: 40px;
+                height: 32px;
+            }
+            
+            .slide-number {
+                font-size: var(--text-xs);
+                padding: var(--space-1) var(--space-3);
+            }
+            
+            /* Better mobile navigation */
+            .mobile-nav {
+                padding: var(--space-3);
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-top: 1px solid var(--slate-200);
+            }
+            
+            .nav-btn {
+                min-height: 44px;
+                min-width: 44px;
+                font-size: var(--text-sm);
+                padding: var(--space-2) var(--space-3);
+            }
+            
+            .nav-counter {
+                font-size: var(--text-xs);
+                min-width: 50px;
+            }
+            
+            /* Improve touch targets */
+            button, a, [role="button"] {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Better text contrast on mobile */
+            .callout-box {
+                padding: var(--space-4);
+                margin: var(--space-4) 0;
+            }
+            
+            .callout-title {
+                font-size: var(--text-lg);
+            }
+            
+            .callout-text {
+                font-size: var(--text-sm);
+                line-height: 1.5;
+            }
+            
+            /* Optimize lists for mobile */
+            ul, ol {
+                padding-left: var(--space-4);
+            }
+            
+            li {
+                margin-bottom: var(--space-1);
+            }
+            
+            /* Better spacing for mobile cards */
+            .card, .info-card {
+                margin-bottom: var(--space-3);
+                padding: var(--space-4);
+            }
+        }
+        
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .slide-content {
+                padding: var(--space-3) var(--space-2);
+                font-size: 13px;
+            }
+            
+            .slide-title {
+                font-size: clamp(1.5rem, 7vw, 2rem);
+                margin-bottom: var(--space-4);
+            }
+            
+            .slide-subtitle {
+                font-size: clamp(0.9rem, 4vw, 1.1rem);
+                margin-bottom: var(--space-3);
+            }
+            
+            .metric-card, .feature-card {
+                padding: var(--space-3);
+            }
+            
+            .slide-header {
+                padding: var(--space-2) var(--space-3);
+                min-height: 50px;
+            }
+            
+            .logo {
+                height: 28px;
             }
         }
 
@@ -2134,46 +2202,9 @@
             e.preventDefault();
         });
 
-        // ===== AGGRESSIVE LIGHT MODE ENFORCEMENT =====
-        function forceLightMode() {
-            // Force light mode on document and html
-            document.documentElement.style.setProperty('color-scheme', 'light only', 'important');
-            document.documentElement.style.setProperty('background', '#f8fafc', 'important');
-            document.documentElement.style.setProperty('filter', 'none', 'important');
-            
-            document.body.style.setProperty('background', 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)', 'important');
-            document.body.style.setProperty('color', '#1e293b', 'important');
-            document.body.style.setProperty('filter', 'none', 'important');
-            
-            // Override any dark mode styles that might have been applied
-            const allElements = document.querySelectorAll('*');
-            allElements.forEach(element => {
-                const computedStyle = window.getComputedStyle(element);
-                if (computedStyle.filter && computedStyle.filter !== 'none') {
-                    element.style.setProperty('filter', 'none', 'important');
-                }
-                element.style.setProperty('color-scheme', 'light only', 'important');
-            });
-            
-            // Force meta tag values
-            let colorSchemeMetaTag = document.querySelector('meta[name="color-scheme"]');
-            if (colorSchemeMetaTag) {
-                colorSchemeMetaTag.setAttribute('content', 'light only');
-            }
-        }
-
-        // Run on DOM ready
-        document.addEventListener('DOMContentLoaded', forceLightMode);
-        
-        // Run repeatedly to override any dynamic changes
-        setInterval(forceLightMode, 100);
-
         // Enhanced loading animation
         window.addEventListener('load', function() {
             document.body.classList.add('loaded');
-            
-            // Force light mode again after load
-            forceLightMode();
             
             // Animate in the first slide elements
             setTimeout(() => {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200, initial-scale=0.3, user-scalable=yes">
     <title>Apex Wiring Solutions - Comprehensive Marketing Strategy</title>
     
     <!-- Favicon -->
@@ -191,6 +191,7 @@
             overflow: hidden;
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
+            min-width: 1200px;
         }
 
         body.loaded {
@@ -742,43 +743,8 @@
             text-align: center;
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            .navigation {
-                display: none;
-            }
-            
-            .mobile-nav {
-                display: flex;
-            }
-            
-            .slide-content {
-                padding: var(--space-6);
-            }
-            
-            .metric-showcase {
-                grid-template-columns: 1fr;
-                gap: var(--space-4);
-            }
-            
-            .feature-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-4);
-            }
-            
-            .comparison-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-4);
-            }
-            
-            .slide-header {
-                padding: var(--space-4) var(--space-6);
-            }
-            
-            .logo {
-                height: 40px;
-            }
-        }
+        /* ===== RESPONSIVE DESIGN REMOVED FOR MOBILE COMPATIBILITY ===== */
+        /* Mobile will display desktop version */
 
         /* ===== UTILITY CLASSES ===== */
         .text-center { text-align: center; }

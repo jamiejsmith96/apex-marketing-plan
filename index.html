@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="color-scheme" content="light only">
-    <meta name="theme-color" content="#1e40af">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex Wiring Solutions - Comprehensive Marketing Strategy</title>
     
     <!-- Favicon -->
@@ -12,10 +10,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="Apex-Wiring-Logo-RGB.png">
     <link rel="shortcut icon" href="Apex-Wiring-Logo-RGB.png">
     <link rel="apple-touch-icon" sizes="180x180" href="Apex-Wiring-Logo-RGB.png">
+    
+    <!-- Force Light Mode - Prevent System Dark Mode Override -->
+    <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light">
+    <meta name="theme-color" content="#f8fafc">
     <style>
         /* ===== DESIGN SYSTEM ===== */
         :root {
-            color-scheme: light only;
             /* Brand Colors */
             --apex-primary: #1e40af;
             --apex-secondary: #0ea5e9;
@@ -87,26 +89,21 @@
             box-sizing: border-box;
         }
 
-        /* ===== FORCE LIGHT MODE ===== */
+        /* ===== FORCE LIGHT MODE - OVERRIDE SYSTEM DARK MODE ===== */
         html {
             color-scheme: light only !important;
-            background-color: #f8fafc !important;
+            background: var(--slate-50) !important;
         }
 
-        body {
-            background-color: #f8fafc !important;
-            color: #1e293b !important;
-        }
-
-        /* Override any automatic dark mode detection */
+        /* Override any potential dark mode styles */
         @media (prefers-color-scheme: dark) {
             :root {
                 color-scheme: light only !important;
             }
             
             html, body {
-                background-color: #f8fafc !important;
-                color: #1e293b !important;
+                background: linear-gradient(135deg, var(--slate-50) 0%, var(--slate-100) 100%) !important;
+                color: var(--slate-800) !important;
             }
             
             * {
